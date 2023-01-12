@@ -12,8 +12,8 @@ const compactVars = require('./scripts/compact-vars');
 const { webpack } = getWebpackConfig;
 
 function injectLessVariables(config, variables) {
-  (Array.isArray(config) ? config : [config]).forEach(conf => {
-    conf.module.rules.forEach(rule => {
+  (Array.isArray(config) ? config : [config]).forEach((conf) => {
+    conf.module.rules.forEach((rule) => {
       // filter less rule
       if (rule.test instanceof RegExp && rule.test.test('.less')) {
         const lessRule = rule.use[rule.use.length - 1];
@@ -61,12 +61,12 @@ function externalMoment(config) {
 }
 
 function processWebpackThemeConfig(themeConfig, theme, vars) {
-  themeConfig.forEach(config => {
+  themeConfig.forEach((config) => {
     ignoreMomentLocale(config);
     externalMoment(config);
 
     // rename default entry to ${theme} entry
-    Object.keys(config.entry).forEach(entryName => {
+    Object.keys(config.entry).forEach((entryName) => {
       const originPath = config.entry[entryName];
       let replacedPath = [...originPath];
 
@@ -106,16 +106,18 @@ function processWebpackThemeConfig(themeConfig, theme, vars) {
 
 const legacyEntryVars = {
   'root-entry-name': 'default',
+  'ant-prefix': 'antd4',
 };
 const webpackConfig = injectLessVariables(getWebpackConfig(false), legacyEntryVars);
 const webpackDarkConfig = injectLessVariables(getWebpackConfig(false), legacyEntryVars);
 const webpackCompactConfig = injectLessVariables(getWebpackConfig(false), legacyEntryVars);
 const webpackVariableConfig = injectLessVariables(getWebpackConfig(false), {
   'root-entry-name': 'variable',
+  'ant-prefix': 'antd4',
 });
 
 if (process.env.RUN_ENV === 'PRODUCTION') {
-  webpackConfig.forEach(config => {
+  webpackConfig.forEach((config) => {
     ignoreMomentLocale(config);
     externalMoment(config);
     addLocales(config);

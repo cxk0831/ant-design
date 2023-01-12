@@ -21,6 +21,7 @@ site/theme/template/NotFound.jsx
 typings
 es/**/*
 lib/**/*
+lib-rollup/**/*
 node_modules
 _site
 dist
