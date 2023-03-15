@@ -1,6 +1,6 @@
 {
-  "name": "@didi/antd4-compatible",
-  "version": "0.0.1",
+  "name": "@didi/antd-compatible",
+  "version": "4.24.4",
   "description": "An enterprise-class UI design language and React components implementation",
   "title": "Ant Design",
   "type": "module",
