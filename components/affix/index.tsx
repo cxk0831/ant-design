@@ -75,6 +75,7 @@ class Affix extends React.Component<AffixProps, AffixState> {
     if (target) {
       // [Legacy] Wait for parent component ref has its value.
       // We should use target as directly element instead of function which makes element check hard.
+      // @ts-ignore
       this.timeout = setTimeout(() => {
         addObserveTarget(target(), this);
         // Mock Event object.

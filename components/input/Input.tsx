@@ -223,6 +223,7 @@ class Input extends React.Component<InputProps, InputState> {
 
   clearPasswordValueAttribute = () => {
     // https://github.com/ant-design/ant-design/issues/20541
+    // @ts-ignore
     this.removePasswordTimeout = setTimeout(() => {
       if (
         this.input &&

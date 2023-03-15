@@ -88,6 +88,7 @@ class ScrollNumber extends React.Component<ScrollNumberProps, ScrollNumberState>
       this.clearTimeout();
       // Let browser has time to reset the scroller before actually
       // performing the transition.
+      // @ts-ignore
       this.timeout = setTimeout(() => {
         // eslint-disable-next-line react/no-did-update-set-state
         this.setState(
