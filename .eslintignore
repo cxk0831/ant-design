@@ -13,3 +13,4 @@ node_modules
 _site
 dist
 **/*.d.ts
+lib-rollup/**/*
