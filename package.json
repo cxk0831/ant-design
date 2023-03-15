@@ -1,5 +1,5 @@
 {
-  "name": "@didi/antd4-compatible",
+  "name": "@didi/antd-compatible",
   "version": "3.26.19",
   "description": "An enterprise-class UI design language and React components implementation",
   "type": "module",
